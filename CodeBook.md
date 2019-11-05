@@ -31,3 +31,6 @@ fBodyGyroJerkMag
 ## Second tidy data set
 ### Info
 This data set holds the mean of the former values for groups of user and activity. 
+
+## Data Cleaning
+In order to clean the data, first, user ID was read from `subject_test.txt`, then only the relevant columns for `X_test.txt` were read (those which contain mean and standart deviation data) and their column names were taken from `feautures.txt`, and then the feature index was read from `y_test.txt`, and changed to to its title based on `activity_labels.txt`. Same for `train` data set.
