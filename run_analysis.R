@@ -1,7 +1,5 @@
 ## Initialization
 
-# Set proper working directory
-setwd("C:/Users/yevfu/Documents/Data Science/Projects/Course 3 - Cleaning Data/Week 4/Project")
 # Name of directory with data
 datadir<-"./UCI HAR Dataset"
 
@@ -51,3 +49,5 @@ DT<-rbind(testDT,trainDT)
 
 ## Find mean by groups of user and activity
 DT2<-DT%>%group_by(ID,activity)%>%summarise_at(vars(names(DT)[2:(dim(DT)[2]-1)]),mean,na.rm=T)
+# Write data set to file
+write.table(DT2,file="TidyDataSet2.txt",row.names = F)
